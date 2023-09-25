@@ -3,6 +3,7 @@ from typing import List
 import openai
 import argparse
 import re
+import json
 
 MAX_INPUT_LENGTH = 32
 
@@ -22,23 +23,21 @@ def main():
             f"Input length is too long. Must be under {MAX_INPUT_LENGTH}. Submitted input is {user_input}"
         )
 
-
 def validate_length(prompt: str) -> bool:
     return len(prompt) <= MAX_INPUT_LENGTH
 
 
 def generate_keywords(prompt: str) -> List[str]:
     # Load your API key from an environment variable or secret management service
-    openai.api_key = "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"
+    openai.api_key = "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"
+
     enriched_prompt = f"Generate related branding keywords for {prompt}: "
     print(enriched_prompt)
 
-    response = openai.Completion.create(
-        engine="davinci-instruct-beta-v3", prompt=enriched_prompt, max_tokens=32
-    )
+    response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": f"Generate related branding keywords for {prompt}: "}])
 
     # Extract output text.
-    keywords_text: str = response["choices"][0]["text"]
+    keywords_text: str = response["choices"][0]["message"]["content"]
 
     # Strip whitespace.
     keywords_text = keywords_text.strip()
@@ -52,16 +51,15 @@ def generate_keywords(prompt: str) -> List[str]:
 
 def generate_branding_snippet(prompt: str) -> str:
     # Load your API key from an environment variable or secret management service
-    openai.api_key = "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"
+    openai.api_key = "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"
     enriched_prompt = f"Generate upbeat branding snippet for {prompt}: "
     print(enriched_prompt)
 
-    response = openai.Completion.create(
-        engine="davinci-instruct-beta-v3", prompt=enriched_prompt, max_tokens=32
-    )
+    response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": f"Generate upbeat branding snippet for {prompt}: "}])
+
 
     # Extract output text.
-    branding_text: str = response["choices"][0]["text"]
+    branding_text: str = response["choices"][0]["message"]["content"]
 
     # Strip whitespace.
     branding_text = branding_text.strip()
