@@ -1,0 +1,5 @@
+fastapi==0.99.1
+mangum
+openai
+requests
+pydantic==1.10.12
