@@ -2,6 +2,8 @@ import { log } from "console";
 import { useState } from "react";
 import Form from "./form";
 import Results from "./results";
+import Image from "next/image";
+import logo from "../public/logo.svg"
 
 const Cylinder : React.FC = () => {
     const CHARACTER_LIMIT : number = 32;
@@ -49,12 +51,20 @@ const Cylinder : React.FC = () => {
                 onSubmit={onSubmit} 
                 isLoading={isLoading} />
     }
+    const gradientText = "text-white text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% font-light w-fit mx-auto"
     return ( 
-        <>
-            <h1>cyl.inder</h1>
-            {displayedElement}
-           
-        </>
+        <div className="bg-[url('../public/bg.png')] h-screen flex bg-center">
+            <div className="max-w-md m-auto">
+                <div className="bg-slate-800 p-4 rounded-md border-slate-800 text-white">
+                    <div className="text-center my-6">
+                        <Image src={logo} width={42} height={42} alt="logo"/>
+                        <h1 className={gradientText + " text-3xl"}>cyl.inder</h1>
+                        <div className={gradientText}>Your AI branding assistant.</div>
+                    </div>
+                    {displayedElement}
+                </div>
+            </div>
+        </div>
      );
 }
  
