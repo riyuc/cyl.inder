@@ -2,3 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply m-2 rounded-lg border-2 border-blue-400 bg-slate-900 p-2 font-bold text-blue-400 transition-all duration-200 ease-in-out hover:bg-blue-600 hover:text-slate-900;
+    box-shadow: 5px 5px #dbb01696;
+  }
+
+  body {
+    @apply bg-black;
+  }
+
+  @keyframes halo {
+    0% {
+      @apply bg-yellow-500/50;
+      opacity: 0.7;
+    }
+    50% {
+      @apply bg-blue-400/50;
+      opacity: 1;
+    }
+    100% {
+      @apply bg-white/50;
+      opacity: 0.7;
+    }
+  }
+
+  .halo-animation {
+    @apply rounded-lg;
+    animation: halo 1s ease-in-out; /* Adjust the duration and timing function as needed */
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

@@ -36,7 +36,7 @@ const Header = () => {
   ]
 
   return <div className="my-4 text-center">
-  <h1 className="font-light text-4xl">cyl.inder</h1>
+  <h1 className="font-light text-4xl"></h1>
   <p>
     {navLinks.map((link: ICustomLinkProps, idx: number) => <Fragment key={idx}>
       <CustomLink url={link.url} label={link.label}>{link.children ?? null}</CustomLink>&nbsp;|&nbsp;
