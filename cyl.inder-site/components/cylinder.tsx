@@ -52,10 +52,11 @@ const Cylinder : React.FC = () => {
                 isLoading={isLoading} />
     }
     const gradientText = "text-white text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% font-light w-fit mx-auto"
+    
     return ( 
-        <div className="bg-[url('../public/bg.png')] h-screen flex bg-center">
-            <div className="max-w-md m-auto">
-                <div className="bg-slate-800 p-4 rounded-md border-slate-800 text-white">
+        <div className=" flex bg-center">
+            <div className="m-auto">
+                <div className=" p-4 rounded-md text-white">
                     <div className="text-center my-6">
                         <Image src={logo} width={42} height={42} alt="logo"/>
                         <h1 className={gradientText + " text-3xl"}>cyl.inder</h1>
