@@ -10,7 +10,6 @@ const About = ({ show, setShow }: IAboutProps) => {
     <article className="dark:prose-invert prose prose-p:text-left text-left">
       <h1>About this project</h1>
       <blockquote>It is just a project for me to learn full-stack development.</blockquote>
-      <button className="rounded-full p-2 border hover:text-green-500 hover:border-green-500 transition-all ease-in-out duration-300" onClick={setShow}>{`Too long, ain't gon' read.`}</button>
       <p>{`Hi, I'm Duc Nguyen.`}</p>
       <p>I created the app solely for the purpose of learning Python back-end development and also trying out AWS for the first time.</p>
       <p>While at school, everyone talks about Python and AWS and how important it is to learn those types of technologies cause it is the industry standard</p>

@@ -54,13 +54,12 @@ const Cylinder : React.FC = () => {
     const gradientText = "text-white text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% font-light w-fit mx-auto"
     
     return ( 
-        <div className=" bg-gradient-to-b from-slate-950 bg-pink-950/20 h-full w-full min-h-screen flex flex-col bg-center">
-            <div className="mx-auto">
-                <div className=" p-4 rounded-md text-white min-h-full">
+        <div className=" bg-gradient-to-b from-slate-950 bg-pink-950/20 h-full w-full min-h-screen flex flex-col">
+            <div className="flex mx-auto">
+                <div className="p-4 rounded-md text-white min-h-full text-center ">
                     <div className="text-center">
-                        <h1 className={gradientText + "font-light text-4xl"}>cyl.inder</h1>
+                        <h1 className={gradientText + "flex mx-auto font-light text-4xl justify-center"}>cyl.inder</h1>
                         <Header></Header>
-                        <div className={gradientText + "underline underline-offset-4"}>Your AI branding assistant.</div>
                     </div>
                     {displayedElement}
                 </div>
